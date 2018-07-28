@@ -76,6 +76,7 @@ defmodule Commanded.Registration do
   def registry_provider do
     case Application.get_env(:commanded, :registry, :local) do
       :local -> Commanded.Registration.LocalRegistry
+      :global -> Commanded.Registration.GlobalRegistry
       other -> other
     end
   end
